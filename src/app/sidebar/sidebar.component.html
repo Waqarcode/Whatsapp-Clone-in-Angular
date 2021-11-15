@@ -1,0 +1,82 @@
+<div id="sidebar">
+    <div id="rowContainer">
+        <div id="sidebarHeader">
+            <div class="avatarContainer">
+                <img src="../../assets/images/noPic.svg" alt="">
+            </div>
+            <div class="actionContainer">
+            
+                <img src="../../assets/images/statusIcon.svg" alt="">
+                <img src="../../assets/images/chatIcon.svg" alt="">
+                <img src="../../assets/images/moreVertIcon.svg" alt="">
+            </div>
+                
+        </div >
+        <div id="searchBox">
+            <img id="searchicon" src="../../assets/images/searchIcon.svg" alt="">
+            <input type="text" placeholder="Search or start a new chart">
+        </div>
+    </div>
+    
+
+
+    <div id="sidebarContent">
+        <!-- <div id="noConversations">
+            All chat are archived  
+        </div>-->
+
+        <div 
+            class="conversation" 
+            *ngFor="let chat of conversations"
+            (click)="ConversationClicked.emit(chat)"
+        >
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="name">{{chat.name}}</div>
+                    <div class="timestamp">{{chat.time}}</div>
+                </div>
+                
+                <div class="message">
+                    <img *ngIf="!chat.messageRead" src="../../assets/images/doubleTick.svg" alt="">
+                    <img *ngIf="chat.messageRead" src="../../assets/images/doubleTickBlue.svg" alt="">
+                    {{chat.latestmessage}}
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="conversation">
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="name">Danial Sohail</div>
+                    <div class="timestamp">5:50 PM</div>
+                </div>
+                
+                <div class="message">Kidra ha??</div>
+            </div>
+        </div>
+
+        <div class="conversation">
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="name">Zain Ali</div>
+                    <div class="timestamp">7:45 PM</div>
+                </div>
+
+                <div class="message">AOA</div>
+            </div>
+        </div> -->
+    </div>
+    
+</div>

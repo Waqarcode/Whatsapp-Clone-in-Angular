@@ -1,0 +1,150 @@
+#sidebar{
+    width: 100%;
+    height: 100%;
+    //background-color: green;
+    border-right: 1px solid #e1e4e5;
+    display: flex;
+    flex-direction: column;
+    #rowContainer{
+        display: flex;
+        flex-direction: column;
+        #sidebarHeader{
+            flex-basis: 67px; //height: 67px;
+            background-color: #eeeeee;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            justify-content: space-between;
+            //border: 1px solid red;
+            .avatarContainer {
+                flex-basis: 43px;
+                height: 43px;
+                //border: 1px solid red;
+                img{
+                    height: 100%;
+                }
+            }
+            .actionContainer{
+                //flex-grow: 1;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                width: 150px;
+                justify-content: space-between;
+                //border: 1px solid black;
+            }
+        }
+    
+        #searchBox{
+            flex-basis: 50px;
+            //background-color:#fbfbfb;        
+            background-color:#fbfbfb;
+            border-bottom: 1px solid #e1e4e5;
+            display: flex;
+            align-items: center; justify-content: center;
+    
+            input{
+                width: calc(90% - 60px);
+                //border: 1px solid #f2f2f2;
+                border: none;
+                border-radius: 20px;
+                height: 70%;
+                padding-left: 60px;
+                outline: none;
+                box-shadow: 0px 0px 3px #efefef;
+                color: #a4a4a4; // effect cursor color
+                &::placeholder{
+                    color: #a4a4a4;
+                    font-weight: 100;
+                }
+            }
+            #searchicon{
+                width: 19px;
+                position: absolute;
+                left: 30px;
+            }
+        }
+    }
+
+    #noConversations{
+        padding-top: 30px;
+        text-align: center;
+        color: #b9b9b9;
+        font-size: 18px;
+        font-weight: 100;
+    }
+
+    #sidebarContent{
+        flex-grow: 1;
+        overflow: auto;
+        .conversation{
+            display: flex;
+            //width: 100%;
+            height: 67px;
+            //justify-content: space-between;
+            padding-right: 5px;
+            display: flex;
+            transition: all 0.4 ease-in-out;
+            &:hover{
+                background-color: rgba(#ccc, 0.05);
+                cursor: pointer;
+            }
+            .picture{
+                 flex-basis: 73px;
+                 height: 100%;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 img{
+                     max-width: 100%;
+                     width: 48px;
+                 }
+            }      
+            .content{
+                //height: 100%;
+                border-bottom: 1px solid #f2f2f2;
+                flex-grow: 1;
+                padding: 12px 0px;
+                padding-right: 10px;
+                .conversationHeader{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    .name{
+                        color: #040404;
+                    }
+                    .timestamp{
+                        color:#979797;
+                        font-size: 13px;
+                        padding: 2px;
+                    }
+                }
+                .message{
+                    display: flex;
+                    align-items: center;
+                    color: #717171;
+                    font-size: 13px;
+                    padding-top: 6px;
+                    img{
+                        margin-right: 2px;
+                    }
+                }
+            }  
+        }
+    }
+
+    #sidebarContent::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    #sidebarContent::-webkit-scrollbar-track {
+        background-color: darkgrey;
+    }
+    
+    #sidebarContent::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+}
