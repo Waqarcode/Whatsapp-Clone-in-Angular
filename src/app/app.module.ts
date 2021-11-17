@@ -5,6 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ChatComponent } from './chat/chat.component';
+import { FormsModule } from '@angular/forms';
+import { PickerModule } from '@ctrl/ngx-emoji-mart'
+//import {enableProdMode} from '@angular/core';
+
+
+
+//import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji'
+//import { EmojiData } from './ngx-emoji';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +22,8 @@ import { ChatComponent } from './chat/chat.component';
     ChatComponent
   ],
   imports: [
+    FormsModule,
+    PickerModule, //EmojiData, //EmojiModule, 
     BrowserModule,
     AppRoutingModule
   ],
@@ -20,3 +31,4 @@ import { ChatComponent } from './chat/chat.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent { 
-  convesation: any
+  conversation: any
   
-  onConvertionSelected(convesation: any){
-    this.convesation = convesation;
+  onConvertionSelected(conversation: any){
+    this.conversation = conversation;
   }
 }

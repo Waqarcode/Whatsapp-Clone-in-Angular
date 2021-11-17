@@ -1,13 +1,36 @@
 <div id="container">
-    <div class="header"></div>
-    <div class="body"></div>
-    
+    <div class="header">
+        <div class="avatarSection">
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg" alt="">
+            </div>
+            <div class="nameSection">
+                Ali
+            </div>
+        </div>
+        <div class="actionButton">
+            <img src="../../assets/images/attached.svg" alt="">
+            <img src="../../assets/images/moreVertIcon.svg" alt="">
+        </div>
+    </div>
+    <div class="body">
+        <div class="message" [ngClass]="{me: message.me}" *ngFor="let message of conversation.message">
+            <div class="messageContent">
+                {{message.body}}
+            <div class="time">{{message.time}} </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <div id="smileyIcon">
-            <img src="../../assets/images/smileIcon.svg" alt="">
+            <img (click)="emojiPickerVisiable =!emojiPickerVisiable"  src="../../assets/images/smileIcon.svg" alt="">
+            <emoji-mart (emojiClick)="emojiClicked($event)"
+            *ngIf="emojiPickerVisiable"
+            [darkMode]="false" title="Pick your emoji…" emoji="point_up"></emoji-mart>
         </div>
         <div id="textArea">
-            <textarea></textarea>
+            <textarea [(ngModel)]="message" (keyup.enter)="submitMessage($event)"></textarea>
         </div>
         <div id="micIcon">
             <img src="../../assets/images/voiceIcon.svg" alt="">

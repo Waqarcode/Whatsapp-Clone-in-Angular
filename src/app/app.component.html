@@ -6,7 +6,7 @@
     <app-sidebar (ConversationClicked)="onConvertionSelected($event)"></app-sidebar>
 
     <div id="chat">
-        <div id="chatPlaceHolder" *ngIf="!convesation">
+        <div id="chatPlaceHolder" *ngIf="!conversation">
             <img width="400" src="../assets/images/phoneIcon.png" alt="">
             <h2>Keep Your Connected</h2>
             <p>WhatsApp connects your phone to sync message. To reduce data <br>usage, connect to your phone 
@@ -18,7 +18,7 @@
     
         </div>
 
-        <app-chat *ngIf="convesation"></app-chat>     
+        <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>     
     </div>
 </div>
 <router-outlet></router-outlet>

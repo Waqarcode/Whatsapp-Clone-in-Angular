@@ -14,7 +14,7 @@
         </div >
         <div id="searchBox">
             <img id="searchicon" src="../../assets/images/searchIcon.svg" alt="">
-            <input type="text" placeholder="Search or start a new chart">
+            <input [(ngModel)]="searchText" type="text" placeholder="Search or start a new chart">
         </div>
     </div>
     
@@ -27,7 +27,7 @@
 
         <div 
             class="conversation" 
-            *ngFor="let chat of conversations"
+            *ngFor="let chat of searchText ? filteredConversation : conversations"
             (click)="ConversationClicked.emit(chat)"
         >
             <div class="picture">
